@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Food Blog</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <navigation-bar></navigation-bar>
+
+        <div class="container-fluid">
+            <div class="row">
+                <aside id="leftside" class="col-md-3 bg-success"></aside>
+                <aside id="rightside" class="col-md-9 bg-warning"></aside>
+            </div>
+            <div id="container" class="position-relative bg-light p-5">
+                <header class="bg-secondary text-white p-3 rounded">
+                    <span>Food Blog</span>
+                </header>
+
+                <main>
+                    <photo></photo>
+                    <h2 class="text-uppercase text-success mt-3">Comments</h2>
+
+                    <section id="blogposts">
+                        <comment-post
+                            v-for="post in posts"
+                            :key="post.id"
+                            :author="post.author"
+                            :date="post.date"
+                            :reply="post.reply"
+                            :content="post.content"
+                            :profile="post.profile"
+                            @show-profile="showProfile"
+                        ></comment-post>
+                    </section>
+                    
+                    <author-info
+                        v-if="visibleProfile"
+                        :profile="visibleProfile"
+                        @close-profile="closeProfile"
+                    ></author-info>
+                </main>
+            </div>
+        </div>
+
+        <footer class="text-center mt-5">
+            &copy; Copyright FOOD BLOG
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="navigation.js"></script>
+    <script src="photo.js"></script>
+    <script src="commentPost.js"></script>
+    <script src="authorInfo.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

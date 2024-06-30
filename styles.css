@@ -1,0 +1,62 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+header span {
+    font-family: 'Sacramento', cursive;
+}
+#leftside {
+    min-height: 1200px;
+}
+#rightside {
+    min-height: 1200px;
+}
+#container {
+    min-width: 1100px;
+    min-height: 1050px;
+    border-radius: 0.7em;
+}
+main #photos img {
+    margin: 0.75em;
+    border: 0.85em solid rgb(255, 255, 255);
+}
+main .post {
+    margin: 25px;
+    padding: 25px;
+    border: 2px solid rgba(83, 78, 58, 0.6);
+    border-radius: 0.5em;
+}
+.profile-pic {
+    cursor: pointer;
+    margin-right: 10px;
+    vertical-align: middle;
+    width: 60px;
+    height: 50px;
+}
+.author-info {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    display: none;
+    width: 300px;
+    text-align: left;
+}
+.author-info.visible {
+    display: block;
+}
+.author-info button {
+    background: white;
+    color: black;
+    border: 1px solid white;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+footer {
+    font-size: 0.85em;
+    margin-top: 20px;
+}
